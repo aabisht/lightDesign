@@ -1,0 +1,43 @@
+/*
+    ---------------- Scaffolding ----------------
+    
+    - Reset the box-sizing
+    - Selection color
+    - Body reset
+
+*/
+
+/*
+    ---------------- Reset the box-sizing ----------------
+*/
+
+* {
+    &, &:before, &:after {
+        @include box-sizing(border-box);
+    }
+}
+
+/*
+    ---------------- Selection color ----------------
+*/
+@include selection-color($disabled-color, #fff);
+
+
+/*
+    ---------------- Body reset ----------------
+*/
+
+html {
+                      font-size: $base-font-size;
+    -webkit-tap-highlight-color: $transparent-color;
+}
+
+body {
+    font-family: $font-family-primary;
+    font-size: $body-font-size;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $body-bg;
+}
+
+

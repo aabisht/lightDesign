@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     cssmin = require('gulp-cssmin'),
     cleanCSS = require('gulp-clean-css'),
     uglify = require('gulp-uglifyjs');
+    sourcemaps = require('gulp-sourcemaps');
 
 
 var paths = {
@@ -32,10 +33,12 @@ gulp.task('browserSync', function() {
 gulp.task('sass', function() {
     return gulp.src('app/scss/**/*.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(sass({
-            //outputStyle: 'compressed'
+            outputStyle: 'compressed'
         })
         .on('error', sass.logError))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('app/css'));
 })
 
