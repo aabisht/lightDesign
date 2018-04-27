@@ -19,10 +19,12 @@ $text-color:            $gray-dark;
 $font-family-primary: 'Roboto', sans-serif;
 $font-family-secondary: 'Open Sans', sans-serif;
 
-
 $base-font-size: 10px;
-
 $body-font-size: 1.4rem;
+
+$link-color:            $primary-color;
+$link-hover-color:      darken($primary-color, 15%);
+$link-hover-decoration: none;
 
 $font-family-heading: $font-family-secondary;
 $heading-font-weight: 600;
@@ -39,3 +41,16 @@ $font-size-h6:            $body-font-size * 0.85;
 
 $line-height-base:        1.428571429;
 $line-height-computed:    $body-font-size * $line-height-base;
+
+$border-radius-base:  4px;
+$border-radius-small: 3px;
+$border-radius-large: 6px;
+
+// Thumbnails
+
+$thumbnail-padding: 4px;
+$thumbnail-bg: $body-bg;
+$thumbnail-border:        #ddd;
+$thumbnail-border-radius:   $border-radius-base;
+$thumbnail-caption-color:   $text-color;
+$thumbnail-caption-padding: 9px;

@@ -4,6 +4,9 @@
     - Reset the box-sizing
     - Selection color
     - Body reset
+    - Reset fonts for relevant elements
+    - Figures
+    - Images
 
 */
 
@@ -20,7 +23,7 @@
 /*
     ---------------- Selection color ----------------
 */
-@include selection-color($disabled-color, #fff);
+@include selection-color($primary-color, #fff);
 
 
 /*
@@ -40,4 +43,72 @@ body {
     background-color: $body-bg;
 }
 
+/*
+    ---------------- Reset fonts for relevant elements ----------------
+*/
 
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/*
+    ---------------- Links ----------------
+*/
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+
+    &:focus {
+        @include tab-focus();
+    }
+}
+
+/*
+    ---------------- Figures ----------------
+*/
+
+figure {
+    margin: 0;
+}
+
+/*
+    ---------------- Images ----------------
+*/
+
+img {
+    vertical-align: middle;
+}
+
+// Responsive images
+.img-responsive {
+    @include img-responsive();
+}
+
+// Rounded corners
+.img-rounded {
+    border-radius: $border-radius-large;
+}
+
+// Image thumbnails
+.img-thumbnail { 
+    padding: $thumbnail-padding;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: 1px solid $thumbnail-border;
+    border-radius: $thumbnail-border-radius;
+    
+    @include transition(all .2s ease-in-out);
+
+    @include img-responsive(inline-block);
+}
