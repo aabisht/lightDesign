@@ -13,6 +13,24 @@ $warning-color:     #8a6d3b;
 $danger-color:      #a94442;
 $transparent-color: rgba(0,0,0,0);
 
+// Form states and alerts
+$state-success-text:             #3c763d;
+$state-success-bg:               #dff0d8;
+$state-success-border:           darken($state-success-bg, 5%);
+
+$state-info-text:                #31708f;
+$state-info-bg:                  #d9edf7;
+$state-info-border:              darken($state-info-bg, 7%);
+
+$state-warning-text:             #8a6d3b;
+$state-warning-bg:               #fcf8e3;
+$state-warning-border:           darken($state-warning-bg, 5%);
+
+$state-danger-text:              #a94442;
+$state-danger-bg:                #f2dede;
+$state-danger-border:            darken($state-danger-bg, 5%);
+
+
 $body-bg:               #fff;
 $text-color:            $gray-dark;
 
@@ -21,6 +39,8 @@ $font-family-secondary: 'Open Sans', sans-serif;
 
 $base-font-size: 10px;
 $body-font-size: 1.4rem;
+$body-font-large: ($body-font-size * 1.25);
+$body-font-small: ($body-font-size * 0.85);
 
 $link-color:            $primary-color;
 $link-hover-color:      darken($primary-color, 15%);
@@ -54,3 +74,19 @@ $thumbnail-border:        #ddd;
 $thumbnail-border-radius:   $border-radius-base;
 $thumbnail-caption-color:   $text-color;
 $thumbnail-caption-padding: 9px;
+
+$hr-border: $gray-lighter;
+
+// Media queries breakpoints
+
+$screen-xs-min: 480px;
+$screen-xs-max: ($screen-xs-min - 1);
+$screen-sm-min: 768px;
+$screen-sm-max: ($screen-sm-min - 1);
+$screen-md-min: 991px;
+$screen-md-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-lg-max: ($screen-lg-min - 1);
+
+$screen-list: 'xs', 'sm', 'md', 'lg';
+$screen-list-name: $screen-xs-min, $screen-sm-min, $screen-md-min, $screen-lg-min;

@@ -1,5 +1,11 @@
 /*
     ---------------- Typography ----------------
+
+    - Heading
+    - Body text
+    - Emphasis & misc
+    - Alignment & Transformation
+
 */
 
 /*
@@ -50,3 +56,69 @@ h4, .h4 { font-size: $font-size-h4; }
 h5, .h5 { font-size: $font-size-h5; }
 h6, .h6 { font-size: $font-size-h6; }
 
+/*
+    ---------------- Body text ----------------
+*/
+
+p {
+    margin: 0 0 ($line-height-computed / 2);
+
+    &:only-child {
+        margin-bottom: 0;
+    }
+}
+
+.lead {
+    margin-bottom: $line-height-computed;
+    font-size: $body-font-size * 1.15;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @media screen and (min-width: $screen-sm-min) {
+        font-size: $body-font-size * 1.5;
+    }
+}
+
+/*
+    ---------------- Emphasis & misc ----------------
+*/
+
+small,
+.small {
+    font-size: floor(($body-font-small / $body-font-size) * 100%);
+}
+
+mark,
+.mark {
+    background-color: $state-warning-bg;
+    padding: .2em;
+}
+
+/*
+    ---------------- Alignment & Transformation ----------------
+*/
+
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+@each $item in $screen-list {
+    $index: index($screen-list, $item);
+    @media screen and (min-width: nth($screen-list-name, $index)) {
+        .text-#{$item}-left           { text-align: left; }
+        .text-#{$item}-right          { text-align: right; }
+        .text-#{$item}-center         { text-align: center; }
+        .text-#{$item}-justify        { text-align: justify; }
+        .text-#{$item}-nowrap         { white-space: nowrap; }
+
+        .text-#{$item}-lowercase      { text-transform: lowercase; }
+        .text-#{$item}-uppercase      { text-transform: uppercase; }
+        .text-#{$item}-capitalize     { text-transform: capitalize; }
+    }
+}

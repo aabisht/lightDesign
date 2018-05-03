@@ -112,3 +112,44 @@ img {
 
     @include img-responsive(inline-block);
 }
+
+// Rounded Images
+.img-circle {
+    border-radius: 50%; // set radius in percents
+}
+
+// Horizontal rules
+hr {
+    margin-top: $line-height-computed;
+    margin-bottom: $line-height-computed;
+    border: 0;
+    border-top: 1px solid $hr-border;
+}
+
+// Only display content to screen readers
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.sr-only-focusable {
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+    }
+}
+
+// iOS "clickable elements" fix for role="button"
+[role="button"] {
+    cursor: pointer;
+}
