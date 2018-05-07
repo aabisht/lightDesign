@@ -88,5 +88,5 @@ $screen-md-max: ($screen-md-min - 1);
 $screen-lg-min: 1200px;
 $screen-lg-max: ($screen-lg-min - 1);
 
-$screen-list: 'xs', 'sm', 'md', 'lg';
+$screen-list: '-xs', '-sm', '-md', '-lg';
 $screen-list-name: $screen-xs-min, $screen-sm-min, $screen-md-min, $screen-lg-min;

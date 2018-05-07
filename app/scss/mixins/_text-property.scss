@@ -1,0 +1,11 @@
+@mixin text-property ($screenType: "") {
+    .text#{$screenType}-left           { text-align: left; }
+    .text#{$screenType}-right          { text-align: right; }
+    .text#{$screenType}-center         { text-align: center; }
+    .text#{$screenType}-justify        { text-align: justify; }
+    .text#{$screenType}-nowrap         { white-space: nowrap; }
+
+    .text#{$screenType}-lowercase      { text-transform: lowercase; }
+    .text#{$screenType}-uppercase      { text-transform: uppercase; }
+    .text#{$screenType}-capitalize     { text-transform: capitalize; }
+}

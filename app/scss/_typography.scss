@@ -98,27 +98,12 @@ mark,
     ---------------- Alignment & Transformation ----------------
 */
 
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-.text-justify        { text-align: justify; }
-.text-nowrap         { white-space: nowrap; }
-
-.text-lowercase      { text-transform: lowercase; }
-.text-uppercase      { text-transform: uppercase; }
-.text-capitalize     { text-transform: capitalize; }
+@include text-property();
 
 @each $item in $screen-list {
     $index: index($screen-list, $item);
-    @media screen and (min-width: nth($screen-list-name, $index)) {
-        .text-#{$item}-left           { text-align: left; }
-        .text-#{$item}-right          { text-align: right; }
-        .text-#{$item}-center         { text-align: center; }
-        .text-#{$item}-justify        { text-align: justify; }
-        .text-#{$item}-nowrap         { white-space: nowrap; }
 
-        .text-#{$item}-lowercase      { text-transform: lowercase; }
-        .text-#{$item}-uppercase      { text-transform: uppercase; }
-        .text-#{$item}-capitalize     { text-transform: capitalize; }
+    @media screen and (min-width: nth($screen-list-name, $index)) {
+        @include text-property($item);
     }
 }
