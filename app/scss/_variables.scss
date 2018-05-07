@@ -13,6 +13,10 @@ $warning-color:     #8a6d3b;
 $danger-color:      #a94442;
 $transparent-color: rgba(0,0,0,0);
 
+$text-mudted:              $gray-light;
+$page-header-border-color: $gray-lighter;
+$abbr-border-color:        $gray-light;
+
 // Form states and alerts
 $state-success-text:             #3c763d;
 $state-success-bg:               #dff0d8;
@@ -88,5 +92,16 @@ $screen-md-max: ($screen-md-min - 1);
 $screen-lg-min: 1200px;
 $screen-lg-max: ($screen-lg-min - 1);
 
+$grid-float-breakpoint: screen-sm-min;
+
+$component-offset-horizontal: 180px;
+
+$dl-horizontal-offset:     $component-offset-horizontal;
+$dl-horizontal-breakpoint: $grid-float-breakpoint;
+
 $screen-list: '-xs', '-sm', '-md', '-lg';
 $screen-list-name: $screen-xs-min, $screen-sm-min, $screen-md-min, $screen-lg-min;
+
+$blockquote-font-size:        ($body-font-size * 1.25);
+$blockquote-border-color:     $gray-lighter;
+$blockquote-small-color:      $gray-light;

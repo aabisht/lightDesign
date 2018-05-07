@@ -5,6 +5,20 @@
     - Body text
     - Emphasis & misc
     - Alignment & Transformation
+    - Contextual colors
+    - Contextual backgrounds
+    - Page header
+    - Lists
+      -- Unordered and Ordered lists
+      -- list Unstyled
+      -- list inline
+    - Description Lists
+      -- Horizontal description lists
+    - Misc
+      -- Abbreviations and acronyms
+      -- Blockquotes
+      -- Blockquotes Right
+      -- Addresses
 
 */
 
@@ -107,3 +121,211 @@ mark,
         @include text-property($item);
     }
 }
+
+/*
+    ---------------- Contextual colors ----------------
+*/
+.text-muted {
+    color: $text-mudted;
+}
+
+.text-primary {
+    @include text-emphasis-variant($primary-color)
+}
+
+.text-success {
+    @include text-emphasis-variant($success-color)
+}
+
+.text-info {
+    @include text-emphasis-variant($info-color)
+}
+
+.text-warning {
+    @include text-emphasis-variant($warning-color)
+}
+
+.text-danger {
+    @include text-emphasis-variant($danger-color)
+}
+
+/*
+    ---------------- Contextual backgrounds ----------------
+*/
+.bg-primary {
+    @include bg-variant($primary-color, #fff);
+}
+
+.bg-success {
+    @include bg-variant($success-color, #fff);
+}
+
+.bg-info {
+    @include bg-variant($info-color, #fff);
+}
+
+.bg-warning {
+    @include bg-variant($warning-color, #fff);
+}
+
+.bg-danger {
+    @include bg-variant($danger-color, #fff);
+}
+
+/*
+    ---------------- Page header ----------------
+*/
+.page-header { 
+    padding-bottom: $line-height-computed / 2;
+    margin: ($line-height-computed * 2) 0 $line-height-computed;
+    border-bottom: 1px solid $page-header-border-color;
+}
+
+/*
+    ---------------- Lists ----------------
+*/
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin: 0 0 ($line-height-computed / 2);
+  padding: 0 0 0 (($line-height-computed * 3) / 4);
+  list-style-position: inside;
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// list Unstyled
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+// list inline 
+.list-inline {
+    @extend .list-unstyled;
+    margin-left: -0.5rem;
+
+    > li {
+        display: inline-block;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+
+/*
+    ---------------- Description Lists ----------------
+*/
+dl {
+    margin-top: 0;
+    margin-bottom: $line-height-computed;
+}
+
+dt,
+dd {
+    line-height: $line-height-base;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+}
+
+// Horizontal description lists
+
+.dl-horizontal {
+    dd {
+        @include clearfix();
+    }
+
+    @media screen and (min-width: $dl-horizontal-breakpoint) {
+        dt {
+            float: left;
+            width: $dl-horizontal-offset - 20px;
+            clear: left;
+            text-align: right;
+            @include text-overflow();
+        }
+        dd {
+            margin-left: $dl-horizontal-offset;
+        }
+    }
+}
+
+/*
+    ---------------- Misc ----------------
+*/
+
+// Abbreviations and acronyms
+abbr[title],
+abbr[data-original-title] {
+    cursor: help;
+    border-bottom: 1px dotted $abbr-border-color;
+}
+
+.initialism {
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+// Blockquotes
+
+blockquote {
+    padding: ($line-height-computed / 2) $line-height-computed;
+    margin: 0 0 $line-height-computed;
+    font-size: $blockquote-font-size;
+    border-left: 5px solid $blockquote-border-color;
+
+    p,
+    ul,
+    ol {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    footer,
+    small,
+    .small {
+    display: block;
+    font-size: 80%; // back to default font-size
+    line-height: $line-height-base;
+    color: $blockquote-small-color;
+
+        &:before {
+            content: '-'; // em dash, nbsp
+        }
+    }
+
+
+    &.blockquote-reverse,
+    &.pull-right {
+        padding-right: 1.5rem;
+        padding-left: 0;
+        border-left: 0;
+        border-right: 5px solid $blockquote-border-color;
+        text-align: right;
+
+        footer,
+        small,
+        .small {
+            &:before { content: ''; }
+            &:after {
+                content: '-'; // nbsp, em dash
+            }
+        }
+    }
+}
+
+// Addresses
+address {
+    margin-bottom: $line-height-computed;
+    font-style: normal;
+    line-height: $line-height-base;
+  }

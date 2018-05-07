@@ -1,3 +1,6 @@
+/*
+    ---------------- Text Property ----------------
+*/
 @mixin text-property ($screenType: "") {
     .text#{$screenType}-left           { text-align: left; }
     .text#{$screenType}-right          { text-align: right; }

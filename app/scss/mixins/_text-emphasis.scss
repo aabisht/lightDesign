@@ -1,0 +1,16 @@
+/*
+    ---------------- Text Emphasis Variant ----------------
+*/
+@mixin text-emphasis-variant($color) {
+    color: $color;
+
+    a {
+        color: darken($color, 5%);
+
+        &:hover,
+        &:focus {
+            color: darken($color, 10%);
+        }
+    }
+
+}

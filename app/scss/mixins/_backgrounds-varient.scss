@@ -1,0 +1,17 @@
+/*
+    ---------------- Backgrounds Variant ----------------
+*/
+
+@mixin bg-variant($bg-color, $text-color: $gray-dark) {
+    background-color: $bg-color;
+    color: $text-color;
+
+    a {
+        color: darken($text-color, 5%);
+
+        &:hover,
+        &:focus {
+            color: darken($text-color, 10%);
+        }
+    }
+}

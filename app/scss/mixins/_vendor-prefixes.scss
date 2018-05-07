@@ -11,7 +11,7 @@
     - Transformations
     - Transitions
     - User Select
-
+    - Calc Function
 
 */
 
@@ -285,4 +285,17 @@
         background-color: $background-color;
                    color: $text-color;
     }
+}
+
+/*
+    ---------------- Calc Function ----------------
+
+    - Calculating using calc css function
+
+*/
+
+@mixin clac($property, $calcType, $calcFrom, $calcTo) {
+    #{$property}: -webkit-calc(#{$calcFrom}  #{$calcType} #{$calcTo});
+    #{$property}: -moz-calc(#{$calcFrom}  #{$calcType} #{$calcTo});
+    #{$property}: calc(#{$calcFrom}  #{$calcType} #{$calcTo});
 }
