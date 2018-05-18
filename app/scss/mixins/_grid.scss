@@ -1,0 +1,104 @@
+// Centered container element
+
+@mixin container-fixed($gutter: $grid-gutter-width) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+
+    @include clearfix();
+}
+
+@mixin make-row() {
+    margin-left: $grid-gutter-width / -2;
+
+    @include clearfix();
+}
+
+$col-xs-class: 'col';
+$col-sm-class: 'col';
+$col-md-class: 'col';
+$col-lg-class: 'col';
+
+@mixin make-grid-columns() {
+    
+    @each $item in $screen-list {
+        @for $i from 1 to ($grid-columns+1) {
+            @if($item == '-xs') {
+                @if ($i == 1) {
+                    $col-xs-class: #{'.'}#{$col-xs-class}#{$item}#{'-'}#{$i};
+                } @else {
+                    $col-xs-class: #{$col-xs-class}#{' , .col'}#{$item}#{'-'}#{$i};
+                }
+            }
+
+            @if($item == '-sm') {
+                @if ($i == 1) {
+                    $col-sm-class: #{'.'}#{$col-sm-class}#{$item}#{'-'}#{$i};
+                } @else {
+                    $col-sm-class: #{$col-sm-class}#{' , .col'}#{$item}#{'-'}#{$i};
+                }
+            }
+
+            @if($item == '-md') {
+                @if ($i == 1) {
+                    $col-md-class: #{'.'}#{$col-md-class}#{$item}#{'-'}#{$i};
+                } @else {
+                    $col-md-class: #{$col-md-class}#{' , .col'}#{$item}#{'-'}#{$i};
+                }
+            }
+
+            @if($item == '-lg') {
+                @if ($i == 1) {
+                    $col-lg-class: #{'.'}#{$col-lg-class}#{$item}#{'-'}#{$i};
+                } @else {
+                    $col-lg-class: #{$col-lg-class}#{' , .col'}#{$item}#{'-'}#{$i};
+                }
+            }
+        }
+    }
+    
+    @include default-columns();
+
+    @include columns-left();
+
+}
+
+// Prevent columns from collapsing when empty
+@mixin default-columns() {
+    #{$col-xs-class},
+    #{$col-md-class},
+    #{$col-sm-class},
+    #{$col-lg-class} {
+        min-height: 1px;
+        position: relative;
+        padding-left: $grid-gutter-width / 2;
+    }
+}
+
+@mixin columns-left() {
+    @media screen and (min-width: $screen-xs-min) {
+        #{$col-xs-class} {
+            float: left;
+        }
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+        #{$col-sm-class} {
+            float: left;
+        }
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+        #{$col-md-class} {
+            float: left;
+        }
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+        #{$col-lg-class} {
+            float: left;
+        }
+    }
+}

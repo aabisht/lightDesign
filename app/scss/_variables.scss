@@ -99,9 +99,19 @@ $component-offset-horizontal: 180px;
 $dl-horizontal-offset:     $component-offset-horizontal;
 $dl-horizontal-breakpoint: $grid-float-breakpoint;
 
-$screen-list: '-xs', '-sm', '-md', '-lg';
-$screen-list-name: $screen-xs-min, $screen-sm-min, $screen-md-min, $screen-lg-min;
-
 $blockquote-font-size:        ($body-font-size * 1.25);
 $blockquote-border-color:     $gray-lighter;
 $blockquote-small-color:      $gray-light;
+
+
+// Grid system
+
+$grid-columns      :         12;
+$grid-gutter-width :         3em;
+
+
+$screen-list        : '-xs', '-sm', '-md', '-lg';
+$screen-list-name   : $screen-xs-min, $screen-sm-min, $screen-md-min, $screen-lg-min;
+$container-sm       : 750px;
+$container-md       : 970px;
+$container-lg       : 1170px;

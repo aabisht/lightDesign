@@ -1,0 +1,31 @@
+// Container widths
+.container {
+    @include container-fixed();
+
+    @media screen and (min-width: $screen-sm-min) {
+        max-width: $container-sm;
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+        max-width: $container-md;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+        max-width: $container-lg;
+    }
+
+}
+
+// Fluid container
+.container-fluid {
+    @include container-fixed();
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+.row {
+    @include make-row();
+}
+
+@include make-grid-columns();
