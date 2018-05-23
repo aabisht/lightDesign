@@ -115,3 +115,12 @@ $screen-list-name   : $screen-xs-min, $screen-sm-min, $screen-md-min, $screen-lg
 $container-sm       : 750px;
 $container-md       : 970px;
 $container-lg       : 1170px;
+
+// Table
+$table-bg                     : transparent;
+$table-cell-padding           : 0.8rem;
+$table-border-color           : #ddd;
+$table-condensed-cell-padding : 0.5rem;
+$table-bg-accent              : #f9f9f9;
+$table-bg-hover               : #f5f5f5;
+$table-bg-active              : $table-bg-hover;
