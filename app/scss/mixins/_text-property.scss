@@ -11,4 +11,7 @@
     .text#{$screenType}-lowercase      { text-transform: lowercase; }
     .text#{$screenType}-uppercase      { text-transform: uppercase; }
     .text#{$screenType}-capitalize     { text-transform: capitalize; }
+
+    .pull#{$screenType}-left           { float: left !important; }
+    .pull#{$screenType}-right          { float: right !important; }
 }

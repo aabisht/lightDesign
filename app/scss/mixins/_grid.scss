@@ -16,18 +16,18 @@
     @include clearfix();
 }
 
-$col-xs-class: 'col';
-$col-sm-class: 'col';
-$col-md-class: 'col';
-$col-lg-class: 'col';
 
 @mixin make-grid-columns() {
+    $col-xs-class: '.col';
+    $col-sm-class: '.col';
+    $col-md-class: '.col';
+    $col-lg-class: '.col';
     
     @each $item in $screen-list {
         @for $i from 1 to ($grid-columns+1) {
             @if($item == '-xs') {
                 @if ($i == 1) {
-                    $col-xs-class: #{'.'}#{$col-xs-class}#{$item}#{'-'}#{$i};
+                    $col-xs-class: #{$col-xs-class}#{$item}#{'-'}#{$i};
                 } @else {
                     $col-xs-class: #{$col-xs-class}#{' , .col'}#{$item}#{'-'}#{$i};
                 }
@@ -35,7 +35,7 @@ $col-lg-class: 'col';
 
             @if($item == '-sm') {
                 @if ($i == 1) {
-                    $col-sm-class: #{'.'}#{$col-sm-class}#{$item}#{'-'}#{$i};
+                    $col-sm-class: #{$col-sm-class}#{$item}#{'-'}#{$i};
                 } @else {
                     $col-sm-class: #{$col-sm-class}#{' , .col'}#{$item}#{'-'}#{$i};
                 }
@@ -43,7 +43,7 @@ $col-lg-class: 'col';
 
             @if($item == '-md') {
                 @if ($i == 1) {
-                    $col-md-class: #{'.'}#{$col-md-class}#{$item}#{'-'}#{$i};
+                    $col-md-class: #{$col-md-class}#{$item}#{'-'}#{$i};
                 } @else {
                     $col-md-class: #{$col-md-class}#{' , .col'}#{$item}#{'-'}#{$i};
                 }
@@ -51,7 +51,7 @@ $col-lg-class: 'col';
 
             @if($item == '-lg') {
                 @if ($i == 1) {
-                    $col-lg-class: #{'.'}#{$col-lg-class}#{$item}#{'-'}#{$i};
+                    $col-lg-class: #{$col-lg-class}#{$item}#{'-'}#{$i};
                 } @else {
                     $col-lg-class: #{$col-lg-class}#{' , .col'}#{$item}#{'-'}#{$i};
                 }
@@ -59,14 +59,15 @@ $col-lg-class: 'col';
         }
     }
     
-    @include default-columns();
+    @include default-columns($col-xs-class, $col-md-class, $col-sm-class, $col-lg-class);
 
-    @include columns-left();
+    @include columns-left($col-xs-class, $col-md-class, $col-sm-class, $col-lg-class);
 
+    @include column-width();
 }
 
 // Prevent columns from collapsing when empty
-@mixin default-columns() {
+@mixin default-columns($col-xs-class, $col-md-class, $col-sm-class, $col-lg-class) {
     #{$col-xs-class},
     #{$col-md-class},
     #{$col-sm-class},
@@ -77,7 +78,7 @@ $col-lg-class: 'col';
     }
 }
 
-@mixin columns-left() {
+@mixin columns-left($col-xs-class, $col-md-class, $col-sm-class, $col-lg-class) {
     @media screen and (min-width: $screen-xs-min) {
         #{$col-xs-class} {
             float: left;
@@ -99,6 +100,32 @@ $col-lg-class: 'col';
     @media screen and (min-width: $screen-lg-min) {
         #{$col-lg-class} {
             float: left;
+        }
+    }
+}
+
+@mixin column-width() {
+    @each $item in $screen-list {
+        $index: index($screen-list, $item);
+
+        @media screen and (min-width: nth($screen-list-name, $index)) {
+            @for $i from 1 to ($grid-columns+1) {
+                .col#{$item}-offset-#{$i - 1} {
+                    margin-left: percentage(($i - 1)/$grid-columns);
+                }
+
+                .col#{$item}-#{$i} {
+                    width: percentage($i/$grid-columns);
+                }
+
+                .col#{$item}-pull-#{$i} { 
+                    right: percentage($i/$grid-columns);
+                }
+
+                .col#{$item}-push-#{$i} { 
+                    left: percentage($i/$grid-columns);
+                }
+            }
         }
     }
 }
