@@ -1,0 +1,24 @@
+@mixin form-control-focus($color: $input-border-focus) {
+    $color-rgba: rgba($color, .6);
+    &:focus {
+        border-color: $color;
+        outline: 0;
+        @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
+    }
+}
+
+@mixin form-control-material-focus($color: $input-border-focus) {
+    &:focus, &:active {
+        & {
+            border-color: $color;
+            @include box-shadow(0 1px 0 $color);
+        }
+        & ~ label {
+            left: 0;
+            color: $color;
+            line-height: $line-height-base;
+            @include transform(translateY(-$material-input-padding) scale(0.8));
+            @include transform-origin(0 0);
+        }
+    }
+}

@@ -19,7 +19,7 @@
     ---------------- Animations ----------------
 */
 
-@mixin animation($animation) {
+@mixin animation($animation...) {
     -webkit-animation: $animation;
        -o-animation: $animation;
           animation: $animation;
@@ -72,7 +72,7 @@
 
 */
 
-@mixin box-shadow($shadow) {
+@mixin box-shadow($shadow...) {
     -webkit-box-shadow: $shadow;
             box-shadow: $shadow;
 }
@@ -219,13 +219,19 @@
         -ms-transform-origin: $origin; // IE9 only
             transform-origin: $origin;
 }
+@mixin transform($transform...){
+    -webkit-transform: $transform;
+        -ms-transform: $transform; // IE9 only
+         -o-transform: $transform;
+            transform: $transform;
+}
 
 /*
     ---------------- Transitions ----------------
 
 */
 
-@mixin transition($transition) {
+@mixin transition($transition...) {
     -webkit-transition: $transition;
          -o-transition: $transition;
             transition: $transition;

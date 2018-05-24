@@ -1,0 +1,84 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Normalize non-controls
+//
+// Restyle and baseline non-control form elements.
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+    // so we reset that to ensure it behaves more like a standard block element.
+    // See https://github.com/twbs/bootstrap/issues/12359.
+    min-width: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: $line-height-computed;
+    font-size: ($body-font-size * 1.5);
+    line-height: inherit;
+    color: $legend-color;
+    border: 0;
+    border-bottom: 1px solid $legend-border-color;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="search"] {
+    @include box-sizing(border-box);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9; // IE8-9
+    line-height: normal;
+}
+
+input[type="file"] {
+    display: block;
+}
+
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+output {
+    display: block;
+    padding-top: ($padding-base-vertical + 1);
+    font-size: $body-font-size;
+    line-height: $line-height-base;
+    color: $input-color;
+}
+
+textarea.form-control {
+    height: auto;
+    resize: vertical;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+.form-group {
+    margin-bottom: $form-group-margin-bottom;
+    position: relative;
+}

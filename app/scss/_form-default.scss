@@ -1,0 +1,59 @@
+.form-control {
+    display: block;
+    width: 100%;
+    height: $input-height-base;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    font-size: $body-font-size;
+    line-height: $line-height-base;
+    background-color: $input-bg;
+    background-image: none;
+    border: 1px solid $input-border;
+    border-radius: $input-border-radius;
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    outline: 0;
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+    @include form-control-focus();
+
+    @include placeholder();
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+        border: 0;
+        background-color: transparent;
+    }
+
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: $input-bg-disabled;
+        opacity: 1;
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+    }
+    
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"] {
+        &.form-control {
+        line-height: $input-height-base;
+        }
+
+        &.input-sm,
+        .input-group-sm & {
+        line-height: $input-height-small;
+        }
+
+        &.input-lg,
+        .input-group-lg & {
+        line-height: $input-height-large;
+        }
+    }
+}

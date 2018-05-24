@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 
 var paths = {
     css: [
-        'app/css/style.css'
+        'app/dist/css/style.css'
     ],
     js: [
         'app/js/**/*.js'
@@ -39,7 +39,7 @@ gulp.task('sass', function() {
         })
         .on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('app/css'));
+        .pipe(gulp.dest('app/dist/css'));
 })
 
 // Compiles CSS to compressed CSS and add min ext
@@ -49,7 +49,7 @@ gulp.task('compressCss', function() {
         .pipe(cssmin())
         .pipe(rename({suffix : '.min'}))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('app/css'))
+        .pipe(gulp.dest('app/dist/css'))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -57,10 +57,9 @@ gulp.task('compressCss', function() {
 
 // Uglify and minify JS to min ext
 gulp.task('uglify', function(){
-    console.log(paths.js);
     gulp.src(paths.js)
         .pipe(plumber())
-        .pipe(uglify('controller', {
+        .pipe(uglify('light-design', {
           mangle: true,
           output: {
             beautify: false
@@ -92,7 +91,7 @@ gulp.task('uglify', function(){
             ignoreFiles: []
         }))
         .pipe(rename({suffix : '.min.js'}))
-        .pipe(gulp.dest('app/js/'))
+        .pipe(gulp.dest('app/dist/js/'))
 });
 
 gulp.task('watch', ['browserSync', 'sass', 'compressCss', 'uglify'], function(){
