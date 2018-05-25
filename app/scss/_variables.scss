@@ -172,7 +172,12 @@ $legend-border-color:            #e5e5e5;
 $input-group-addon-bg:           $gray-lighter;
 $input-group-addon-border-color: $input-border;
 
-$material-input-padding:         1.5rem;
+$material-input-padding:                1.5rem;
+$material-checkbox-width:               2.0rem;
+$material-checkbox-height:              2.0rem; 
+$material-radio-width:                  2.0rem;
+$material-radio-height:                 2.0rem; 
+$material-checkbox-border-radius:       0.2rem;   
 
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled:                not-allowed;

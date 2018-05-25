@@ -15,7 +15,8 @@ var paths = {
         'app/dist/css/style.css'
     ],
     js: [
-        'app/js/**/*.js'
+        'app/js/light-design.js',
+        'app/js/forms.js'
     ]
 }
 
@@ -101,6 +102,6 @@ gulp.task('watch', ['browserSync', 'sass', 'compressCss', 'uglify'], function(){
 
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('app/*.html', browserSync.reload);
-    gulp.watch('app/js/**/*.js', browserSync.reload);
-    gulp.watch('app/css/**/*.css', browserSync.reload);
+    gulp.watch('app/dist/js/**/*.js', browserSync.reload);
+    gulp.watch('app/dist/css/**/*.css', browserSync.reload);
 });

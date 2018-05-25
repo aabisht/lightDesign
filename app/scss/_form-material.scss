@@ -26,18 +26,16 @@
         line-height: $input-height-base;
         margin: 0;
         @include transition(transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out);
-    }
 
-    @include form-control-material-focus();
-
-    &[placeholder] {
-        & ~ label {
+        &.active {
             left: 0;
             line-height: $line-height-base;
             @include transform(translateY(-$material-input-padding) scale(0.8));
             @include transform-origin(0 0);
         }
     }
+
+    @include form-control-material-focus();
 
     &[disabled],
     &[readonly],
@@ -57,5 +55,168 @@
     &[disabled],
     fieldset[disabled] & {
         cursor: $cursor-disabled;
+    }
+
+    &[type="file"] {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        cursor: pointer;
+    }
+}
+
+// Remove default checkbox
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked,
+[type="radio"]:not(:checked), 
+[type="radio"]:checked {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  margin: 0;
+}
+
+input[type="checkbox"] {
+    + .md-checkbox {
+        position: relative;
+        display: inline-block;
+        width: $material-checkbox-width;
+        height: $material-checkbox-height;
+        cursor: pointer;
+        vertical-align: bottom;
+        margin-right: 0.5rem;
+        @include user-select(none);
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $material-checkbox-width;
+            height: $material-checkbox-height;
+            z-index: 1;
+            border: 2px solid $input-border;
+            border-radius: $material-checkbox-border-radius;
+            @include transition(border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s);
+        }
+
+        &.right {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+    }
+
+    &:not(:checked) {
+        + .md-checkbox {
+            &:before {
+                width: 0;
+                height: 0;
+                border: 3px solid transparent;
+                left: 6px;
+                top: 10px;
+                @include rotateZ(37deg);
+                @include transform-origin(100% 100%);
+            }
+
+            &:after {
+                width: $material-checkbox-width;
+                height: $material-checkbox-height;
+                background-color: transparent;
+                border: 2px solid $input-border;
+                top: 0;
+                z-index: 0;
+            }
+        }
+    }
+
+    &:checked {
+        + span {
+            &:before {
+                top: 2px;
+                left: 1px;
+                width: $material-checkbox-width - 1.2;
+                height: $material-checkbox-height - 0.7;
+                border-top: 2px solid transparent;
+                border-left: 2px solid transparent;
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+                @include rotateZ(37deg);
+                @include transform-origin(100% 100%);
+            }
+
+            &:after {
+                top: 0;
+                width: $material-checkbox-width;
+                height: $material-checkbox-height;
+                border: 2px solid darken($input-border-focus, 5%);
+                background-color: $input-border-focus;
+                z-index: 0;
+            }
+        }
+    }
+
+    .checkbox.danger & {
+        @include checkbox-color($danger-color, #fff);
+    }
+}
+
+input[type="radio"] { 
+    + span {
+        position: relative;
+        display: inline-block;
+        width: $material-radio-width;
+        height: $material-radio-height;
+        cursor: pointer;
+        vertical-align: bottom;
+        margin-right: 0.5rem;
+        @include user-select(none);
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: $material-radio-width - 0.4rem;
+            height: $material-radio-width - 0.4rem;
+            margin: 0.2rem;
+            z-index: 0;
+            border-radius: 50%;
+            @include transition(.28s ease);
+        }
+    }
+
+    &:not(:checked) {
+        + span {
+            &:before,
+            &:after {
+                border: 2px solid $input-border;
+            }
+
+            &:after {
+                @include scale(0);
+            }
+        }
+    }
+
+    &:checked {
+        + span {
+            &:before,
+            &:after {
+                border: 2px solid darken($input-border-focus, 5%);
+            }
+
+            &:after {
+                background-color: $input-border-focus;
+                @include scale(0.5);
+            }
+        }
+    }
+
+    .radio.danger & {
+        @include radio-color($danger-color);
     }
 }

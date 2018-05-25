@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/light-design.css" />
-	<link rel="stylesheet" href="./css/docs.css" />
+    <link rel="stylesheet" href="./dist/css/light-design.css" />
+	<link rel="stylesheet" href="./dist/css/docs.css" />
 </head>
 
 <body>
@@ -145,18 +145,37 @@
 					  	<label for="exampleInputPassword1">Password</label>
 					</div>
 					<div class="form-group">
-						<input type="file" id="exampleInputFile">
+						<input type="text" class="form-control form-file-control" id="exampleInputFile">
 						<label for="exampleInputFile">File input</label>
+						<input type="file" class="form-control" multiple>
 						<p class="help-block">Example block-level help text here.</p>
 					</div>
 					<fieldset class="form-group" disabled>
 						<textarea type="text" class="form-control" id="disabledField"></textarea>
 						<label for="disabledField">Disabled Field</label>
 					</fieldset>
-					<div class="checkbox">
-					  <label>
-						<input type="checkbox"> Check me out
+					<div class="form-group checkbox">
+					  <label for="check-me">
+						<input type="checkbox" id="check-me">
+						<span class="md-checkbox"></span>
+						Check me out
 					  </label>
+					</div>
+					<div class="form-group">
+						<div class="radio">
+							<label for="optionsRadios1">
+								<input name="optionsRadios" value="option1" type="radio" id="optionsRadios1">
+								<span class="md-radio"></span>
+								Option one is this and that—be sure to include why it's great 
+							</label>
+						</div>
+						<div class="radio">
+							<label for="optionsRadios2">
+								<input name="optionsRadios" value="option2" type="radio" id="optionsRadios2">
+								<span class="md-radio"></span>
+								Option one is this and that—be sure to include why it's great 
+							</label>
+						</div>
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 				  </form>
@@ -173,6 +192,8 @@
 			margin-bottom: 1.5rem;
 		}
 	</style>
-</body>
 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="./dist/js/light-design.min.js"></script>
+</body>
 </html>

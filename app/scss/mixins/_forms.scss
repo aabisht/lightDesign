@@ -14,11 +14,37 @@
             @include box-shadow(0 1px 0 $color);
         }
         & ~ label {
-            left: 0;
             color: $color;
-            line-height: $line-height-base;
-            @include transform(translateY(-$material-input-padding) scale(0.8));
-            @include transform-origin(0 0);
+        }
+    }
+}
+
+@mixin checkbox-color($background-color: $input-border-focus, $check-color: #fff) {
+    &:checked {
+        + span {
+            &:before {
+                border-right-color: $check-color;
+                border-bottom-color: $check-color;
+            }
+            &:after {
+                border-color: darken($background-color, 5%);
+                background-color: $background-color;
+            }
+        }
+    }
+}
+
+@mixin radio-color($background-color: $input-border-focus) {
+    &:checked {
+        + span {
+            &:before,
+            &:after {
+                border-color: darken($background-color, 5%);
+            }
+
+            &:after {
+                background-color: $background-color;
+            }
         }
     }
 }
