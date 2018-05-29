@@ -35,6 +35,20 @@
         cursor: $cursor-disabled;
     }
     
+    .hs-error &,
+    &.hs-error {
+        @include form-control-state($danger-color);
+    }
+
+    .hs-success &,
+    &.hs-success {
+        @include form-control-state($success-color)
+    }
+
+    .hs-warning &,
+    &.hs-warning {
+        @include form-control-state($warning-color);
+    }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {

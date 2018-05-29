@@ -58,3 +58,10 @@
         color: $color;
     }
 }
+
+@mixin form-control-state($color) {
+    border-color: darken($color, 5%);
+    color: $color;
+
+    @include form-control-focus($color);
+}
