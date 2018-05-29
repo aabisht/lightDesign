@@ -12,6 +12,7 @@
     - Transitions
     - User Select
     - Calc Function
+    - Opacity
 
 */
 
@@ -126,7 +127,7 @@
     // Firefox
     &::-moz-placeholder {
         color: $color;
-        opacity: 1;
+        @include opacity(1);
     }
 
     // Internet Explorer 10+
@@ -311,3 +312,15 @@
     #{$property}: -moz-calc(#{$calcFrom}  #{$calcType} #{$calcTo});
     #{$property}: calc(#{$calcFrom}  #{$calcType} #{$calcTo});
 }
+
+/*
+    ---------------- Opacity ----------------
+
+*/
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: ($opacity * 100);
+    filter: alpha(opacity=$opacity-ie);
+  }

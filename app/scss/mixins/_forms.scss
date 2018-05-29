@@ -48,3 +48,13 @@
         }
     }
 }
+
+@mixin material-form-control-state($color) {
+    color: $color;
+    border-bottom-color: darken($color, 5%);
+    @include form-control-material-focus(darken($color, 5%));
+
+    ~ label {
+        color: $color;
+    }
+}

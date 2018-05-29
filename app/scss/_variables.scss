@@ -1,4 +1,5 @@
 $gray-base:              #000;
+$white-color:            #fff;
 $gray-darker:            lighten($gray-base, 13.5%); // #222
 $gray-dark:              lighten($gray-base, 20%);   // #333
 $gray:                   lighten($gray-base, 33.5%); // #555
@@ -35,11 +36,11 @@ $state-danger-bg:                #f2dede;
 $state-danger-border:            darken($state-danger-bg, 5%);
 
 
-$body-bg:               #fff;
+$body-bg:               $white-color;
 $text-color:            $gray-dark;
 
-$font-family-primary: 'Roboto', sans-serif;
-$font-family-secondary: 'Open Sans', sans-serif;
+$font-family-primary: 'Open Sans', sans-serif;
+$font-family-secondary: 'Roboto', sans-serif;
 
 $base-font-size: 10px;
 $body-font-size: 1.4rem;
@@ -181,3 +182,14 @@ $material-checkbox-border-radius:       0.2rem;
 
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled:                not-allowed;
+
+//== Buttons
+
+$btn-font-weight:                500 !default;
+
+$btn-default-color:              #333 !default;
+$btn-default-bg:                 #fff !default;
+
+$btn-border-radius-base:         $border-radius-base !default;
+$btn-border-radius-large:        $border-radius-large !default;
+$btn-border-radius-small:        $border-radius-small !default;
