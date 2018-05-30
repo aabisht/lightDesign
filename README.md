@@ -1,7 +1,7 @@
 # Light Design
 [![npm version](https://img.shields.io/npm/v/light-design.svg)](https://www.npmjs.com/package/light-design)
 
-This is the lightest CSS framework with all basic requirement.
+This is the lightest CSS framework with all basic requirement. [Demo](https://light-design.herokuapp.com/)
 
 ## Prerequisites
 
