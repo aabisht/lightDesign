@@ -24,7 +24,7 @@ var paths = {
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './app/'
     },
     port: 5656
   })

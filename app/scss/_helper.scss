@@ -31,17 +31,6 @@
     @include clearfix();
 }
 
-img {
-    vertical-align: middle;
-    border: 0;
-
-    &.img-responsive {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
-}
-
 .center-block {
     @include center-block();
 }
