@@ -1,0 +1,47 @@
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media screen and (max-width: $screen-xs-max) {
+    @include responsive-visibility('.visible-xs');
+}
+
+@media screen and (max-width: $screen-sm-max) {
+    @include responsive-visibility('.visible-sm');
+}
+@media screen and (max-width: $screen-md-max) {
+    @include responsive-visibility('.visible-md');
+}
+@media screen and (max-width: $screen-lg-max) {
+    @include responsive-visibility('.visible-lg');
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+
+    &.img-responsive {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.center-block {
+    @include center-block();
+}

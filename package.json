@@ -1,13 +1,11 @@
 {
-  "name": "test-gulp-project",
-  "version": "1.0.0",
-  "description": "this is the test of gulp",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "light-design",
+  "version": "1.0.1",
+  "description": "Lightest Designed CSS framework.",
+  "main": "index.html",
+  "scripts": {},
   "author": "arun",
-  "license": "ISC",
+  "license": "",
   "devDependencies": {
     "browser-sync": "^2.23.7",
     "gulp": "^3.9.1",

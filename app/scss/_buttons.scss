@@ -79,30 +79,17 @@ a.btn {
     @include button-size($padding-xs-vertical, $padding-xs-horizontal, $body-font-small, $line-height-small, $btn-border-radius-small);
 }
 
-.btn-block,
-.display-block{
+.btn-block {
     display: block;
-}
-.btn-block{
-    width: 100%;    
-}
-.display-inline-block {
-    display: inline-block;
+    width: 100%;  
 }
 @each $item in $screen-list {
     $index: index($screen-list, $item);
     // @debug $item;
     @media screen and (min-width: nth($screen-list-name, $index)) {
-        
-        .btn#{$item}-block,
-        .display#{$item}-block{
-            display: block;
-        }
         .btn#{$item}-block{
             width: 100%;    
-        }
-        .display#{$item}-inline-block {
-           display: inline-block;
+            display: block;
         }
     }
 }

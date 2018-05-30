@@ -1,0 +1,15 @@
+@mixin responsive-visibility($parent) {
+    #{$parent}-block {
+      display: block !important;
+    }
+    #{$parent}-inline {
+        display: inline !important;
+    }
+    #{$parent}-inline-block {
+        display: inline-block !important;
+    }
+    table#{$parent}  { display: table !important; }
+    tr#{$parent}     { display: table-row !important; }
+    th#{$parent},
+    td#{$parent}     { display: table-cell !important; }
+}
