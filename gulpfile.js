@@ -24,7 +24,7 @@ var paths = {
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: './'
     },
     port: 5656
   })
@@ -101,7 +101,7 @@ gulp.task('watch', ['browserSync', 'sass', 'compressCss', 'uglify'], function(){
     gulp.watch(paths.js, ['uglify']);
 
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('app/*.html', browserSync.reload);
+    gulp.watch('./**/*.html', browserSync.reload);
     gulp.watch('app/dist/js/**/*.js', browserSync.reload);
     gulp.watch('app/dist/css/**/*.css', browserSync.reload);
 });
