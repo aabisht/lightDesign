@@ -1,5 +1,35 @@
 // Docs
 
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+sidebar {
+	&.highlight {
+		ul {
+			margin-top: 7px;
+			li {
+				margin-bottom: 7px;
+			}
+
+			ul {
+				padding-left: 15px;
+			}
+		}
+	}
+}
+
+.highlight {
+	padding: 9px 14px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	margin-bottom: 15px;
+}
+
 .ld-example {
 	background-color: #fff;
 	border: 1px solid #ddd;
@@ -7,14 +37,9 @@
 	padding: 15px;
 
 	.table {
-		td {
-			padding: 0;
-			border: none;
-			border-bottom: 1px solid #ddd;
-		}
 		tr {
-			&:last-child td {
-				border-bottom: none;
+			&:first-child td {
+				border-top: none;
 			}
 		}
 		.type-info {
@@ -26,13 +51,12 @@
 
 	> .highlight, > .zero-clipboard+.highlight {
 		margin: 0 -15px -15px;
-		border-width: 1px;
 		border-bottom-right-radius: 4px;
 		border-bottom-left-radius: 4px;
 		padding: 9px 14px;
 		background-color: #f7f7f9;
+		border: 0;
 		border-top: 1px solid #e1e1e8;
-		border-bottom: 0;
 
 		pre {
 			padding: 0;
@@ -66,27 +90,5 @@
 	}
 	.na {
 		color: #4f9fcf;
-	}
-}
-
-code {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #c7254e;
-    background-color: #f9f2f4;
-    border-radius: 4px;
-}
-sidebar {
-	&.highlight {
-		ul {
-			margin-top: 7px;
-			li {
-				margin-bottom: 7px;
-			}
-
-			ul {
-				padding-left: 15px;
-			}
-		}
 	}
 }
