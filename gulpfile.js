@@ -17,31 +17,39 @@ var paths = {
     js: [
         'app/js/light-design.js',
         'app/js/forms.js'
-    ]
-}
+    ],
+    scss: [
+        'app/scss/**/*.scss'
+    ],
+    dist: {
+        'css': './app/dist/css',
+        'js': './app/dist/js'
+    }  
+};
 
 
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: './app/'
+      baseDir: './'
     },
     port: 5656
-  })
-})
+  });
+});
 
 // Compile SCSS to CSS
 gulp.task('sass', function() {
-    return gulp.src('app/scss/**/*.scss')
+    // console.log(paths.dest.css);
+    return gulp.src(paths.scss)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'expanded'
         })
         .on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('app/dist/css'));
-})
+        .pipe(gulp.dest(paths.dist.css));
+});
 
 // Compiles CSS to compressed CSS and add min ext
 gulp.task('compressCss', function() {
@@ -50,11 +58,11 @@ gulp.task('compressCss', function() {
         .pipe(cssmin())
         .pipe(rename({suffix : '.min'}))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('app/dist/css'))
+        .pipe(gulp.dest(paths.dist.css))
         .pipe(browserSync.reload({
             stream: true
         }));
-})
+});
 
 // Uglify and minify JS to min ext
 gulp.task('uglify', function(){
@@ -92,16 +100,16 @@ gulp.task('uglify', function(){
             ignoreFiles: []
         }))
         .pipe(rename({suffix : '.min.js'}))
-        .pipe(gulp.dest('app/dist/js/'))
+        .pipe(gulp.dest(paths.dist.js));
 });
 
-gulp.task('watch', ['browserSync', 'sass', 'compressCss', 'uglify'], function(){
-    gulp.watch('app/scss/**/*.scss', ['sass']);
+gulp.task('default', ['browserSync', 'sass', 'compressCss', 'uglify'], function(){
+    gulp.watch(paths.scss, ['sass']);
     gulp.watch(paths.css, ['compressCss']);
     gulp.watch(paths.js, ['uglify']);
 
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('./**/*.html', browserSync.reload);
-    gulp.watch('app/dist/js/**/*.js', browserSync.reload);
-    gulp.watch('app/dist/css/**/*.css', browserSync.reload);
+    gulp.watch(paths.dist.js+'/**/*.js', browserSync.reload);
+    gulp.watch(paths.dist.css+'/**/*.css', browserSync.reload);
 });

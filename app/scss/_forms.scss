@@ -81,9 +81,32 @@ input[type="search"] {
     -webkit-appearance: none;
 }
 
+.form-horizontal {
+    .form-group {
+        @extend .row;
+    }
+
+    .control-label {
+        @extend .text-right;
+        padding-top: 7px;
+        margin-bottom: 0;
+    }
+
+    .form-control {
+        padding-top: 0;
+    }
+}
+
 .form-group {
     margin-bottom: $form-group-margin-bottom;
     position: relative;
+}
+
+.help-block {
+    display: block;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    color: $input-helper-text-color;
 }
 
 .hs-error label {

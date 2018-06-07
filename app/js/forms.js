@@ -20,7 +20,7 @@
             }
 
         });
-    }
+    };
 
 
     // Custom File Input
@@ -28,8 +28,7 @@
         $(document).on('focus', '.form-file-control', function() {
             $(this).siblings('.form-control[type="file"]').click();
         });
-        $(document).on('change', '.form-control[type="file"]', function() {
-            console.log($(this)[0].files);
+        $(document).on('input', '.form-control[type="file"]', function() {
             var files = $(this)[0].files;
             var file_names = [];
             for (var i=0; i < files.length; i++) {
@@ -37,14 +36,13 @@
             }
             $(this).siblings('.form-control')[0].value = file_names.join(', ');
         });
-    }
-
+    };
 
 })(jQuery);
 
 $(document).ready(function() {
     LD.inputFocus();
-    $(document).on('change keydown keyup', '.form-control', function(){
+    $(document).on('input', '.form-control', function(){
         if ((this.value.length !== 0) || ($(this).attr('placeholder') && $(this).attr('placeholder') !== null)) {
             $(this).siblings('label').addClass('active')
         } else {

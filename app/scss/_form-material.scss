@@ -18,7 +18,7 @@
 
     & ~ label {
         position: absolute;
-        z-index: 2;
+        z-index: 4;
         left: 0;
         top: $material-input-padding;
         font-size: $body-font-size;
@@ -233,5 +233,15 @@ input[type="radio"] {
 
     .radio.danger & {
         @include radio-color($danger-color);
+    }
+}
+
+textarea.form-control {
+    overflow: hidden;
+    padding-top: 0;
+    margin-top: 1.5rem;
+    ~ label {
+        line-height: $line-height-base;
+        top: 0;
     }
 }
