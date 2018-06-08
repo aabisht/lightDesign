@@ -1,5 +1,4 @@
 (function ($) {
-    'use strict';
 
     // Focus input 
     LD.inputFocus = function() {
@@ -37,6 +36,13 @@
             $(this).siblings('.form-control')[0].value = file_names.join(', ');
         });
     };
+    
+    LD.textareaAutoResize = function($textareaSelector) {
+        var content = $textareaSelector.val();
+        content = content.replace(/\n/g, '<br>');
+        $textareaSelector.siblings('.hidden-textarea-wrapper').html(content + '<br>');
+        $textareaSelector.css('height', $textareaSelector.siblings('.hidden-textarea-wrapper').height());
+    };
 
 })(jQuery);
 
@@ -51,4 +57,16 @@ $(document).ready(function() {
     });
 
     LD.fileInput();
+
+    var $textareaSelector = 'textarea.form-control';
+    $($textareaSelector).each(function() {
+        $(this).before('<div class="hidden-textarea-wrapper"></div>');
+        if($(this).val().length <= 0) {
+            $(this).siblings('.hidden-textarea-wrapper').css('min-height', $(this).height());
+        }
+    });
+    $(document).on('input', $textareaSelector, function(){
+        LD.textareaAutoResize($(this));
+    });
+
 });

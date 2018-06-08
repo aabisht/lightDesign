@@ -2863,6 +2863,10 @@ textarea.form-control ~ label {
   top: 0;
 }
 
+.hidden-textarea-wrapper {
+  display: none;
+}
+
 .btn {
   display: inline-block;
   margin-bottom: 0;
