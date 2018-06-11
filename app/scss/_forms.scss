@@ -120,3 +120,10 @@ input[type="search"] {
 .hs-warning label {
     color: $warning-color;
 }
+
+.form-control-static {
+    min-height: $input-height-base;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin-bottom: 0;
+}

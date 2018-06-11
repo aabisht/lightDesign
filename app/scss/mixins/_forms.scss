@@ -20,6 +20,13 @@
 }
 
 @mixin checkbox-color($background-color: $input-border-focus, $check-color: #fff) {
+    &:not(:checked) {
+        + span {
+            &:after {
+                border-color: $background-color;
+            }
+        }
+    }
     &:checked {
         + span {
             &:before {
@@ -35,6 +42,14 @@
 }
 
 @mixin radio-color($background-color: $input-border-focus) {
+    &:not(:checked) {
+        + span {
+            &:before,
+            &:after {
+                border-color: $background-color;
+            }
+        }
+    }
     &:checked {
         + span {
             &:before,
@@ -55,6 +70,10 @@
     @include form-control-material-focus(darken($color, 5%));
 
     ~ label {
+        color: $color;
+    }
+
+    ~ .help-block {
         color: $color;
     }
 }

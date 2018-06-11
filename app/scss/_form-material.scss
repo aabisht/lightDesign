@@ -41,7 +41,7 @@
     &[readonly],
     fieldset[disabled] & {
         background-color: transparent;
-        @include opacity(1);
+        @include opacity(0.6);
         border-color: $input-border;
         @include box-shadow(none);
 
@@ -71,8 +71,8 @@
         @include material-form-control-state($danger-color)
     }
 
-    .hs-succcess &,
-    &.hs-succcess {
+    .hs-success &,
+    &.hs-success {
         @include material-form-control-state($success-color)
     }
 
@@ -173,8 +173,19 @@ input[type="checkbox"] {
         }
     }
 
-    .checkbox.danger & {
+    .checkbox.hs-error &,
+    .hs-error .checkbox & {
         @include checkbox-color($danger-color, #fff);
+    }
+
+    .hs-success .checkbox &,
+    .checkbox.hs-success & {
+        @include checkbox-color($success-color, #fff);
+    }
+
+    .hs-warning .checkbox &,
+    .checkbox.hs-warning & {
+        @include checkbox-color($warning-color, #fff);
     }
 }
 
@@ -231,8 +242,33 @@ input[type="radio"] {
         }
     }
 
-    .radio.danger & {
+    .hs-error .radio &,
+    .radio.hs-error & {
         @include radio-color($danger-color);
+    }
+
+    .hs-success .radio &,
+    .radio.hs-success & {
+        @include radio-color($success-color);
+    }
+
+    .hs-warning.radio &,
+    .radio.hs-warning & {
+        @include radio-color($warning-color);
+    }
+}
+
+.checkbox,
+.radio {
+    &.disabled {
+        label {
+            cursor: $cursor-disabled;
+            @include opacity(0.6);
+
+            .md-radio, .md-checkbox {
+                cursor: $cursor-disabled;
+            }
+        }
     }
 }
 

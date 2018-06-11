@@ -998,7 +998,7 @@
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></figure>
 								</div>
-								<h5 id="formsTextarea">Textarea</h5>
+								<h4 id="formsTextarea">Textarea</h4>
 								<div class="ld-example ld-example-type">
 									<form>
 										<div class="form-group">
@@ -1008,6 +1008,175 @@
 											</div>
 										</div>
 									</form>
+								</div>
+								<h4 id="formsCheckboxRadio">Checkboxes and Radios</h4>
+								<p>Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.</p>
+								<div class="ld-example ld-example-type">
+									<form>
+										<div class="checkbox">
+											<label for="Option11">
+												<input type="checkbox" value="" id="Option11"><span class="md-checkbox"></span> Option one is this and that—be sure to include why it's great </label>
+										</div>
+										<div class="checkbox disabled">
+											<label for="Option12">
+												<input type="checkbox" value="" disabled="" id="Option11"><span class="md-checkbox"></span> Option two is disabled </label>
+										</div>
+										<br>
+										<div class="radio">
+											<label for="optionsRadios1">
+												<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked=""><span class="md-radio"></span> Option one is this and that—be sure to include why it's great </label>
+										</div>
+										<div class="radio">
+											<label for="optionsRadios2">
+												<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"><span class="md-radio"></span> Option two can be something else and selecting it will deselect option one </label>
+										</div>
+										<div class="radio disabled">
+											<label for="optionsRadios3">
+												<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled=""><span class="md-radio"></span> Option three is disabled </label>
+										</div>
+									</form>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label <span class="na">for=</span><span class="s">"Option11"</span>&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"Option11"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span <span class="na">class=</span><span class="s">"md-checkbox"</span>&gt;</span>
+    Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox disabled"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label <span class="na">for=</span><span class="s">"Option12"</span>&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"Option12"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span <span class="na">class=</span><span class="s">"md-checkbox"</span>&gt;</span>
+    Option two is disabled
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label <span class="na">for=</span><span class="s">"optionsRadios1"</span>&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"optionsRadios1"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span <span class="na">class=</span><span class="s">"md-radio"</span>&gt;</span>
+    Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label <span class="na">for=</span><span class="s">"optionsRadios2"</span>&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"optionsRadios2"</span> <span class="na">value=</span><span class="s">"option2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span <span class="na">class=</span><span class="s">"md-radio"</span>&gt;</span>
+    Option two can be something else and selecting it will deselect option one
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio disabled"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label <span class="na">for=</span><span class="s">"optionsRadios3"</span>&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"optionsRadios3"</span> <span class="na">value=</span><span class="s">"option3"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span <span class="na">class=</span><span class="s">"md-radio"</span>&gt;</span>
+    Option three is disabled
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+								</div>
+							</div>
+							<div class="ld-docs-section" id="formsStaticControls">
+								<h3>Static control</h3>
+								<p>When you need to place plain text next to a form label within a form, use the <code>.form-control-static</code> class on a <code>&lt;p&gt;</code>.</p>
+								<div class="ld-example ld-example-type">
+									<form class="form-horizontal"> <div class="form-group"> <label class="col-sm-2 control-label">Email</label> <div class="col-sm-10"> <p class="form-control-static">email@example.com</p> </div> </div> <div class="form-group"> <label for="inputPassword" class="col-sm-2 control-label">Password</label> <div class="col-sm-10"> <input type="password" class="form-control" id="inputPassword" placeholder="Password"> </div> </div> </form>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-horizontal"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"form-control-static"</span><span class="nt">&gt;</span>email@example.com<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputPassword"</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputPassword"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+								</div>
+							</div>
+							<div class="ld-docs-section" id="formsValidationStates">
+								<h3>Validation states</h3>
+								<p>Bootstrap includes validation styles for error, warning, and success states on form controls. To use, add <code>.hs-warning</code>, <code>.hs-error</code>, or <code>.hs-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
+								<div class="ld-example ld-example-type">
+									<form>
+										<div class="form-group hs-success">
+											<input class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+											<label class="control-label" for="inputSuccess1">Input with success</label>
+											<span class="help-block" id="helpBlock2">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+										</div>
+										<div class="form-group hs-warning">
+											<input class="form-control" id="inputWarning1">
+											<label class="control-label" for="inputWarning1">Input with warning</label>
+										</div>
+										<div class="form-group hs-error">
+											<input class="form-control" id="inputError1"> 
+											<label class="control-label" for="inputError1">Input with error</label>
+										</div>
+										<div class="hs-success">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" id="checkboxSuccess" value="option1">
+													<span class="md-checkbox"></span> Checkbox with success 
+												</label>
+											</div>
+										</div>
+										<div class="hs-warning">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" id="checkboxWarning" value="option1">
+													<span class="md-checkbox"></span> Checkbox with warning 
+												</label>
+											</div>
+										</div>
+										<div class="hs-error">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" id="checkboxError" value="option1"> 
+													<span class="md-checkbox"></span>Checkbox with error 
+												</label>
+											</div>
+										</div>
+									</form>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group hs-success"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span> <span class="na">for=</span><span class="s">"inputSuccess1"</span><span class="nt">&gt;</span>Input with success<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputSuccess1"</span> <span class="na">aria-describedby=</span><span class="s">"helpBlock2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"helpBlock2"</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>A block of help text that breaks onto a new line and may extend beyond one line.<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group hs-warning"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span> <span class="na">for=</span><span class="s">"inputWarning1"</span><span class="nt">&gt;</span>Input with warning<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputWarning1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group hs-error"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span> <span class="na">for=</span><span class="s">"inputError1"</span><span class="nt">&gt;</span>Input with error<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputError1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hs-success"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+	  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"checkboxSuccess"</span> <span class="na">value=</span><span class="s">"option1"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;span&gt;</span><span class="na">class=</span><span class="s">"md-checkbox"</span><span class="nt">&lt;/span&gt;</span>
+      Checkbox with success
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hs-warning"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+	  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"checkboxWarning"</span> <span class="na">value=</span><span class="s">"option1"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;span&gt;</span><span class="na">class=</span><span class="s">"md-checkbox"</span><span class="nt">&lt;/span&gt;</span>
+      Checkbox with warning
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hs-error"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+	  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"checkboxError"</span> <span class="na">value=</span><span class="s">"option1"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;span&gt;</span><span class="na">class=</span><span class="s">"md-checkbox"</span><span class="nt">&lt;/span&gt;</span>
+      Checkbox with error
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 								</div>
 							</div>
 					</section>
@@ -1093,6 +1262,25 @@
 									<li>
 										<a href="#responsiveTables">Responsive tables</a>
 									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#forms">Forms</a>
+								<ul class="list-unstyled">
+									<li><a href="#formsBasic">Basic example</a></li>
+									<li><a href="#formsWithoutPlaceholder">Without Placeholder</a></li>
+									<li><a href="#horizontalForm">Horizontal form</a></li>
+									<li>
+										<a href="#formsSupportedControls">Supported controls</a>
+										<ul class="list-unstyled">
+											<li><a href="#formInput">Inputs</a></li>
+											<li><a href="#formFileInput">Files input</a></li>
+											<li><a href="#formsTextarea">Textarea</a></li>
+											<li><a href="#formsCheckboxRadio">Checkboxes and Radios</a></li>
+										</ul>
+									</li>
+									<li><a href="#formsStaticControls">Static control</a></li>
+									<li><a href="#formsValidationStates">Validation states</a></li>
 								</ul>
 							</li>
 						</ul>
