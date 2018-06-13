@@ -60,6 +60,18 @@ a.btn {
     @include button-variant($white-color ,$primary-color, darken($primary-color, 5%));
 }
 
+.btn-success {
+    @include button-variant($white-color ,$success-color, darken($success-color, 5%));
+}
+
+.btn-info {
+    @include button-variant($white-color ,$info-color, darken($info-color, 5%));
+}
+
+.btn-warning {
+    @include button-variant($white-color ,$warning-color, darken($warning-color, 5%));
+}
+
 .btn-danger {
     @include button-variant($white-color, $danger-color, darken($danger-color, 5%));
 }
@@ -82,6 +94,10 @@ a.btn {
 .btn-block {
     display: block;
     width: 100%;  
+
+    + .btn-block {
+        margin-top: 0.5rem;
+    }
 }
 @each $item in $screen-list {
     $index: index($screen-list, $item);
